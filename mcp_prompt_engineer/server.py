@@ -112,6 +112,7 @@ class PromptOptimizationEngine:
         # Define notes for different prompt types - easily editable in plain language
         self.prompt_type_notes = {
             PromptType.RESEARCH: [
+                "ALWAYS RETURN AN ARTIFACT",
                 "The prompt is for research purposes and should emphasize depth and credibility",
                 "Use Brave Search to verify factual accuracy of provided information",
                 "Use Brave Search to get an idea of the research topic",
@@ -119,24 +120,28 @@ class PromptOptimizationEngine:
                 "Prioritize scholarly sources and evidence-based information"
             ],
             PromptType.CREATIVE: [
+                "ALWAYS RETURN AN ARTIFACT",
                 "The prompt is for creative content generation",
                 "Focus on originality and engaging narrative elements",
                 "Consider emotional impact and reader engagement",
                 "Provide clear stylistic direction"
             ],
             PromptType.TECHNICAL: [
+                "ALWAYS RETURN AN ARTIFACT",
                 "The prompt is for technical content that requires precision",
                 "Ensure technical terminology is correctly specified",
                 "Focus on step-by-step clarity and logical progression",
                 "Consider including validation criteria for the output"
             ],
             PromptType.ANALYTICAL: [
+                "ALWAYS RETURN AN ARTIFACT",
                 "The prompt is for analytical investigation",
                 "Emphasize logical frameworks and evaluation criteria",
                 "Consider multiple analytical perspectives",
                 "Focus on evidence-based conclusions"
             ],
             PromptType.GENERAL: [
+                "ALWAYS RETURN AN ARTIFACT",
                 "The prompt is for general purpose content",
                 "Focus on clarity and specificity in the request",
                 "Consider adding examples of desired output format",
