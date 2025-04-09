@@ -43,7 +43,7 @@ Add to your Claude Desktop configuration.
       "command": "uv",
       "args": [
         "--directory",
-        "C:\\Path\\to\\simple-mcp_prompt_engineer",  # On linux: /path/to/simple-mcp_prompt_engineer
+        "C:\\Path\\to\\simple-mcp_prompt_engineer",  \\ On linux: /path/to/simple-mcp_prompt_engineer
         "run",
         "server.py"
       ]
