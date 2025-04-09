@@ -10,10 +10,17 @@ This project implements a powerful prompt optimization server using the Model Co
 - 🔄 **Iterative Refinement**: Allows further improvements based on user feedback
 - 📊 **Optimization History**: Tracks the evolution of prompts over multiple versions
 
-## Prerequisites
+## Setup
 
-- Python 3.12 or higher
-- Poetry for dependency management
+  ```bash
+  # Create and activate virtual environment
+  uv venv
+  .venv\Scripts\activate     # Windows
+  source .venv/bin/activate  # Unix
+
+  # Install dependencies
+  uv pip install rich mcp-server
+  ```
 
 ## Project Structure
 
@@ -23,42 +30,22 @@ simple-mcp-prompt-engineer/
 │   ├── server.py
 │   └── __init__.py
 ├── README.md
-└── pyproject.toml
 ```
-
-## Quick Start
-
-1. **Set Up Project**
-   ```bash
-   # Clone the repository
-   git clone https://github.com/yourusername/simple-mcp-prompt-engineer.git
-   cd simple-mcp-prompt-engineer
-   
-   # Install dependencies with Poetry
-   poetry install
-   
-   # Activate the virtual environment
-   poetry shell
-   ```
-
-2. **Run the Server**
-   ```bash
-   # From the project root directory
-   python -m simple-mcp_prompt_engineer.server
-   ```
 
 ## Claude Desktop Integration
 
-Add to your Claude Desktop configuration (`%APPDATA%\Claude\claude_desktop_config.json` on Windows):
+Add to your Claude Desktop configuration.
 
 ```json
 {
   "mcpServers": {
     "prompt-engineer": {
-      "command": "python",
+      "command": "uv",
       "args": [
-        "-m",
-        "simple-mcp_prompt_engineer.server"
+        "--directory",
+        "C:\\Path\\to\\simple-mcp_prompt_engineer",  # On linux: /path/to/simple-mcp_prompt_engineer
+        "run",
+        "server.py"
       ]
     }
   }
@@ -113,15 +100,6 @@ The prompt optimization goes through the following stages:
 4. **Verification**: Ensuring all important context is preserved
 5. **Refinement**: Applying user feedback for further improvements
 6. **Final**: Polished, optimized prompt ready for use
-
-## Troubleshooting
-
-Common issues:
-
-- **Server Connection Issues**
-  - Verify paths in claude_desktop_config.json
-  - Check Claude Desktop logs: `%APPDATA%\Claude\logs`
-  - Ensure Python 3.12+ is installed
 
 ## License
 
